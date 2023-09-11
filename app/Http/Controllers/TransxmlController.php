@@ -59,8 +59,9 @@ class TransxmlController extends Controller
              *
              */
 
-            // Transxchange XML file name and path.
-            $pathxml = "C:\Users\muniru\myportfolio\TransXchangeXML\storage\app\public\xml-tx\mer_1-3C-_-y11-19.xml";
+            $currentxml= "mer_1-3C-_-y11-19.xml";
+            $folderfilename = "/app/public/xml-tx/";
+            $pathxml = storage_path($folderfilename.$currentxml);
 
             $transxmlfile = file_get_contents($pathxml);     // Read the transxchnage in a string variable
             $transxchangeObj = simplexml_load_string($transxmlfile);    // Create an object from transxmlfile to access content data.
